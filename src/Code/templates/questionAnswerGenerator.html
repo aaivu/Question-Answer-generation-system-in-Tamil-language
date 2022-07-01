@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <head>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script type=text/javascript>
+			$(function() {
+			  $('#upload-file').bind('change', function(e) {
+				var name = document.getElementById("upload-file").files[0].name;
+                var nextSibling = e.target.nextElementSibling
+                nextSibling.innerText = name
+			})
+			});
+		</script>
+	</head>
+<div class="container">
+  <label>Upload a word, text or pdf file</label>
+    <form action="/" method="POST" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <div class="custom-file">
+              <input type="file" class="custom-file-input" name="upload-file" id="upload-file">
+              <label class="custom-file-label" for="upload-file">Select a file...</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" name="submitBtn" value="uploadFile" class="btn btn-primary upload-btn">Upload</button>
+          </div>
+          </div>
+        </div>
+      <label>Or Paste a text</label>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <textarea class="form-control" id="textContent" name="textContent" rows="20">{{content}}</textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" name="submitBtn" value="generateQA" class="btn btn-primary">Generate Questions and Answers</button>
+            <a href="/download">Download Text File</a>
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" id="questionAnswers" name="questionAnswers" rows="20">{{questionAnswers}}</textarea>
+          </div>
+        </div>
+      </div>
+
+    </form>
+
+</div>
+{% endblock %}
+
