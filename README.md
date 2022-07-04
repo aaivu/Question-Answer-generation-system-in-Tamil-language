@@ -24,7 +24,6 @@ sentence by sentence and generate possible factoid WH questions with answers and
 file format.</p>
 
 ## Description
-###System Overview
 
 The system has 4 components: 
 - Preprocessing module
@@ -34,18 +33,18 @@ The system has 4 components:
 
 ![img_3.png](docs/High_level_architecture.png)
 
-####Preprocessing Module
+#### Preprocessing Module
 - Read file content - Read content in text/pdf file
 - Unicode conversion - Convert different Tamil encodings to Unicode.
 - Text Cleaning - Removing HTML tags, extra white spaces, special characters, etc
 - Tokenization - Split text paragraphs into list of meaningful sentences
 - Sentence selection - Sentence with anaphora words at the beginning are ignored.
 
-####Rule-based Module
+#### Rule-based Module
 - Regex pattern matching - Regex pattern defined to generate ‘When’ and ‘How many’ type of questions.
 - Gazetteer match - A gazetteer list for few named entities are defined
 
-####NER Module
+#### NER Module
 - Approach : Machine Learning 
 - Classifier : Conditional Random Field (CRF)
 - Algorithm : lbfgs CRF (Limited-memory Broyden-Fletcher-Goldfarb-Shanno) 
@@ -60,7 +59,7 @@ The system has 4 components:
 - HyperTuning applied due to the unbalanced dataset.
   - algorithm : RandomizedSearchCV
 
-####QAG Module
+#### QAG Module
 - Approach : Rule based
 - Identified named entities from Rule-based and NER module is replaced with question word
 - Affix stripping algorithm implemented to find the inflection suffix.
