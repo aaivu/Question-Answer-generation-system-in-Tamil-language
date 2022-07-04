@@ -1,18 +1,18 @@
 import tamil
 from PyPDF2 import PdfFileReader
-from flask import Flask, flash, render_template, request, redirect, send_file
+from flask import Flask, flash, render_template, request, send_file
 from flask_bootstrap import Bootstrap
 import os
-import processFile
+from src.Code.QAG_Module import processFile
 
 app= Flask(__name__)
 Bootstrap(app)
 
-app.config["FILE_UPLOADS"] = "C:\\Users\ASUS\PycharmProjects\QuestionAnswerGeneration\FrontEnd\\files"
-app.config["TXT_CONVERSION_FILE_PATH"] = "C:\\Users\ASUS\PycharmProjects\QuestionAnswerGeneration\FrontEnd\\files\pdftotxtconversion.txt"
+app.config["FILE_UPLOADS"] = "C:\\Users\ASUS\Desktop\Research Work Upload documents\Github-Aaivu\Question-Answer-generation-system-in-Tamil-language\src\Code\\files\\uploaded_files"
+app.config["TXT_CONVERSION_FILE_PATH"] = "C:\\Users\ASUS\Desktop\Research Work Upload documents\Github-Aaivu\Question-Answer-generation-system-in-Tamil-language\src\Code\\files\pdftotxtconversion.txt"
 app.config["ALLOWED_FILE_EXTENSIONS"] = ["pdf", "doc", "txt", "docx"]
 app.config['SECRET_KEY'] = 'thisisasecret'
-app.config['QUESTION_ANSWER_FILE_PATH'] = "C:\\Users\ASUS\PycharmProjects\QuestionAnswerGeneration\FrontEnd\\files\questionanswers.txt"
+app.config['QUESTION_ANSWER_FILE_PATH'] = "C:\\Users\ASUS\Desktop\Research Work Upload documents\Github-Aaivu\Question-Answer-generation-system-in-Tamil-language\src\Code\\files\questionanswers.txt"
 app.config["MAX_IMAGE_FILE_SIZE"] = 10 * 1024 * 1024
 
 
