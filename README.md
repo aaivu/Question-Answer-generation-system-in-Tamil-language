@@ -19,8 +19,8 @@ A web based Question & Answer generation system in Tamil language for history do
 a Named Entity Recognition(NER) built using machine learning techniques to support Tamil language with data trained on history 
 documents. The system is intended to help the students studying in Tamil medium to learn more efficiently and evaluate themselves 
 for history subject. It also benefits the examiners in preparing quizzes and exam papers using the system.  
-<p>The system accepts text or file related to history domain in Tamil language as input from user and processes the text 
-sentence by sentence and generate possible factoid WH questions with answers and output them in text or downloadable text 
+<p>The system accepts text or file related to history domain in Tamil language as input from user. Then it processes the text 
+content sentence by sentence and generate possible factoid WH questions with answers and output them in text or downloadable text 
 file format.</p>
 
 ## Description
